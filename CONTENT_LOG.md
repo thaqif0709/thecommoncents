@@ -4,7 +4,7 @@
 | # | Topic | Format | Posted (MYT) | Status | Notes |
 |---|---|---|---|---|---|
 | 01 | Big Mac prices around the world | main | Wed 15 Oct 2026 ~10pm | live | generic/global topic, pre-music engine |
-| 02 | Petrol subsidies (Myvi vs SUV) | main | — | **skipped by owner** | draft left hidden in Metricool |
+| 02 | Petrol subsidies (Myvi vs SUV) | main | — | **skipped by owner** | draft deleted from Metricool (16 Oct); video kept in repo, could be reused later |
 | 03 | Why Malaysia is always jammed | main | Thu 16 Oct 2026 ~1pm | live | first story-format + music post |
 | 04 | RM12,000 tax relief ≠ RM12,000 back (Budget 2027) | main | Tue 21 Oct 2026 6pm | scheduled | trend: tax relief explainers going viral |
 | 05 | RM100 in 2015 → RM122 today (CPI) | quick hit | Thu 23 Oct 2026 6pm | scheduled | trend: "then vs now" comparisons |
