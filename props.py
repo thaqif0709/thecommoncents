@@ -299,3 +299,90 @@ def road(d, x0, x1, top, lanes, lane_h=110):
         for x in range(int(x0) + 10, int(x1) - 30, 70):
             d.line((x, y, x + 36, y), fill=CREAM, width=6)
     return bot
+
+def end_card(d, t, tf, hero=None):
+    """Channel end card shown from tf - 0.1: title, tagline, follow pill, and a bouncing hero prop.
+    hero(scale, hop) draws the episode's bouncing prop standing on the floor."""
+    text(d, (W / 2, 280), "THE COMMON", 116, alpha=prog(t, tf, 0.25))
+    text(d, (W / 2, 420), "CENTS", 160, fill=MUSTARD, off=10, alpha=prog(t, tf + 0.1, 0.25))
+    text(d, (W / 2, 545), "money, explained", 58, fill=MUTED, kind="serif", alpha=prog(t, tf + 0.2, 0.25))
+    pill(d, W / 2, 700, "FOLLOW " + HANDLE, RED, prog(t, tf + 0.3, 0.3), size=50)
+    if hero:
+        hero(ease_back(prog(t, tf - 0.1, 0.45)), abs(math.sin(t * math.pi * 1.8)) * 30)
+
+def shop(d, cx, base, s, sign="KEDAI", col=TEAL):
+    if s <= 0.05: return
+    rrect(d, (cx - 160 * s, base - 220 * s, cx + 160 * s, base), 10 * s, CREAM)
+    rrect(d, (cx - 180 * s, base - 300 * s, cx + 180 * s, base - 235 * s), 14 * s, col)
+    text(d, (cx, base - 266 * s), sign, 44 * s, shadow=False, stroke=3)
+    for k in range(6):                                            # striped awning
+        x0 = cx - 180 * s + k * 60 * s
+        d.polygon([(x0, base - 235 * s), (x0 + 60 * s, base - 235 * s), (x0 + 60 * s, base - 195 * s), (x0, base - 195 * s)],
+                  fill=RED if k % 2 == 0 else CREAM, outline=INK)
+    rrect(d, (cx - 40 * s, base - 150 * s, cx + 40 * s, base), 6 * s, MUSTARD, sh=0, ow=4)
+    rrect(d, (cx - 140 * s, base - 160 * s, cx - 60 * s, base - 80 * s), 6 * s, PAPER2, sh=0, ow=4)
+    rrect(d, (cx + 60 * s, base - 160 * s, cx + 140 * s, base - 80 * s), 6 * s, PAPER2, sh=0, ow=4)
+
+def worker(d, cx, base, s, col=TEAL, t=0.0, wave=False):
+    """Little cartoon person (head, body, arms) standing on base."""
+    if s <= 0.05: return
+    lw = max(3, int(8 * s))
+    arm = -0.9 + 0.35 * math.sin(t * 8) if wave else 0.6
+    for side in (-1, 1):
+        a = arm if side > 0 else 0.6
+        d.line((cx + side * 34 * s, base - 120 * s, cx + side * (34 + 40 * math.cos(a)) * s, base - (120 - 40 * math.sin(a)) * s),
+               fill=INK, width=lw)
+    rrect(d, (cx - 36 * s, base - 140 * s, cx + 36 * s, base), 22 * s, col, sh=5, ow=max(2, int(5 * s)))
+    ell(d, (cx - 30 * s, base - 200 * s, cx + 30 * s, base - 140 * s), CREAM, sh=4, ow=max(2, int(5 * s)))
+    for dx in (-10, 10):
+        d.ellipse((cx + (dx - 4) * s, base - 178 * s, cx + (dx + 4) * s, base - 166 * s), fill=INK)
+    d.arc((cx - 12 * s, base - 172 * s, cx + 12 * s, base - 154 * s), 20, 160, fill=INK, width=max(2, int(4 * s)))
+
+def receipt(d, cx, cy, s, lines=("SHOES", "RM1,000"), ang=0.0):
+    if s <= 0.05: return
+    w, h = 210 * s, 300 * s
+    pts = [(cx - w / 2, cy - h / 2), (cx + w / 2, cy - h / 2)]
+    for k in range(9):                                            # torn zigzag bottom
+        pts.append((cx + w / 2 - k * w / 8, cy + h / 2 - (12 * s if k % 2 else 0)))
+    poly(d, pts, CREAM, sh=7, ow=5)
+    text(d, (cx, cy - h / 2 + 40 * s), "RECEIPT", 34 * s, fill=INK, shadow=False, stroke=0)
+    for k in range(3):
+        y = cy - 50 * s + k * 30 * s
+        d.line((cx - 70 * s, y, cx + 70 * s, y), fill=PAPER2, width=max(2, int(8 * s)))
+    text(d, (cx, cy + 60 * s), lines[0], 34 * s, fill=MUTED, kind="serif", shadow=False)
+    text(d, (cx, cy + 105 * s), lines[1], 42 * s, fill=INK, shadow=False, stroke=0)
+
+def shoe(d, cx, base, s, col=RED):
+    if s <= 0.05: return
+    poly(d, [(cx - 120 * s, base - 30 * s), (cx - 110 * s, base - 110 * s), (cx - 40 * s, base - 120 * s), (cx + 10 * s, base - 70 * s),
+             (cx + 110 * s, base - 50 * s), (cx + 130 * s, base - 20 * s)], col, sh=6, ow=5)
+    rrect(d, (cx - 128 * s, base - 34 * s, cx + 136 * s, base), 14 * s, CREAM, sh=0, ow=5)
+    for k in range(3):
+        x = cx - 60 * s + k * 26 * s
+        d.line((x, base - 100 * s + k * 8 * s, x + 24 * s, base - 84 * s + k * 8 * s), fill=CREAM, width=max(2, int(6 * s)))
+
+def line_chart(d, x0, y0, x1, y1, values, prog_, col=RED):
+    """Axes + a line through `values` (0..1 heights) revealed left-to-right by prog_."""
+    d.line((x0, y0, x0, y1, x1, y1), fill=INK, width=6)
+    n = len(values) - 1
+    pts = [(x0 + (x1 - x0) * i / n, y1 - (y1 - y0) * v) for i, v in enumerate(values)]
+    upto = prog_ * n
+    shown = [p for i, p in enumerate(pts) if i <= upto]
+    if 0 < upto < n:
+        i = int(upto); f = upto - i
+        shown.append((lerp(pts[i][0], pts[i + 1][0], f), lerp(pts[i][1], pts[i + 1][1], f)))
+    if len(shown) > 1:
+        d.line([(x + 6, y + 6) for x, y in shown], fill=INK, width=14, joint="curve")
+        d.line(shown, fill=col, width=12, joint="curve")
+        ex, ey = shown[-1]
+        ell(d, (ex - 16, ey - 16, ex + 16, ey + 16), col, sh=4, ow=4)
+
+def seesaw(d, cx, cy, L, tilt_deg, left=None, right=None, col=TEAL):
+    r = math.radians(tilt_deg)
+    lx, ly = cx - L * math.cos(r), cy - L * math.sin(r)
+    rx, ry = cx + L * math.cos(r), cy + L * math.sin(r)
+    poly(d, [(cx, cy), (cx - 80, cy + 230), (cx + 80, cy + 230)], col)
+    d.line((lx + 8, ly + 8, rx + 8, ry + 8), fill=INK, width=24)
+    d.line((lx, ly, rx, ry), fill=ORANGE, width=24)
+    if left: left(lx, ly)
+    if right: right(rx, ry)

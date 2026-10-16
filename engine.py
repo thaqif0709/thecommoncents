@@ -164,6 +164,9 @@ def text(d, xy, s, size, fill=CREAM, kind="toon", anchor="mm", stroke=None, shad
     """Cartoon title text: ink outline + hard ink drop shadow by default (toon font)."""
     if alpha <= 0: return
     f = F(size, kind)
+    max_w = 830 if anchor[0] == "m" else 950 - xy[0]          # keep text clear of the curtains
+    while size > 20 and f.getlength(s) > max_w:
+        size *= 0.94; f = F(size, kind)
     if stroke is None: stroke = max(3, int(size / 14)) if kind == "toon" else 0
     if shadow and kind == "toon":
         d.text((xy[0] + off, xy[1] + off), s, font=f, fill=INK, anchor=anchor, stroke_width=stroke, stroke_fill=INK)
