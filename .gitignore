@@ -7,3 +7,4 @@ episodes/**/mix.wav
 __pycache__/
 *.pyc
 ffmpeg2pass-*
+episodes/**/render.log
