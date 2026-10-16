@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Metricool_Social_Media_Management",
+      "mcp__vidIQ",
+      "mcp__claude-code-remote__add_repo",
+      "mcp__claude-code-remote__register_repo_root",
+      "WebSearch",
+      "WebFetch",
+      "Bash(git:*)",
+      "Bash(python3:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(ffprobe:*)",
+      "Bash(pip install:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}
