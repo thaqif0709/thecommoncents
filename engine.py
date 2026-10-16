@@ -12,7 +12,7 @@ W, H, FPS = 1080, 1920, 30
 GAP, TAIL = 0.15, 1.0      # pause between scenes; hold after the last line
 OUT = next((a for a in sys.argv[1:] if not a.startswith("--")), "episode.mp4")
 PREVIEW = "--preview" in sys.argv  # renders one still per scene instead of video
-HANDLE = "@thecommoncents"
+HANDLE = "THE COMMON CENTS"      # platform-neutral (YouTube handle differs from TikTok @thecommoncents)
 
 # ---------- palette ----------
 INK = (30, 22, 18); CREAM = (250, 240, 215); GLOVE = (252, 248, 238); MUTED = (110, 86, 64)
@@ -350,7 +350,7 @@ def captions(d, t, sc):
 def chrome(d, T):
     p = T / TOTAL
     if p > 0.005: d.rectangle((0, 0, W * p, 12), fill=GOLD)
-    d.text((W / 2, FLOOR_Y + 280), HANDLE, font=F(40, "serif"), fill=PAPER2, anchor="mm")
+    d.text((W / 2, FLOOR_Y + 280), "The Common Cents", font=F(40, "serif"), fill=PAPER2, anchor="mm")
 
 def frame(T, k):
     sc = next((s for s in SCENES if s["start"] <= T < s["start"] + s["dur"]), SCENES[-1])

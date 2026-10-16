@@ -1,7 +1,9 @@
 # The Common Cents — production guide
 
-Malaysian money explainers for TikTok (@thecommoncents) in a 1930s rubber-hose cartoon style.
-The owner has authorised **autonomous weekly production and scheduling** (no per-post approval).
+Malaysian money explainers in a 1930s rubber-hose cartoon style. **YouTube is the priority platform**
+(channel "The Common Cents", YouTube channel id `UCHi1aUFPe-cM87lriJhiF9w`, handle is NOT @thecommoncents — that
+one belongs to someone else). TikTok (@thecommoncents) is posted **manually by the owner** from a kit we prepare.
+The owner has authorised **autonomous weekly production and scheduling on YouTube** (no per-post approval).
 Read this whole file before doing anything.
 
 ## Non-negotiable rules
@@ -12,7 +14,7 @@ Read this whole file before doing anything.
 2. **No 3R topics** (race, religion, royalty), no ethnic comparisons, no Bumiputera policy, no party politics or
    election takes, no targeting individuals. Money and policy mechanics only, explained fairly (show both sides
    on contested questions).
-3. **AI label on:** every TikTok post sets `"isAigc": true`.
+3. **AI label on:** every YouTube post sets `"isAiGeneratedContent": true` (and any TikTok post `"isAigc": true`).
 4. **No copyrighted characters, logos or music.** Everything is drawn in code; music/SFX are synthesised
    (`audio.py`). Brand names may be mentioned (e.g. Myvi, Grab) but never drawn as logos.
 5. **Never delete or edit posts that are already live.** Only create new scheduled posts.
@@ -30,9 +32,11 @@ Read this whole file before doing anything.
    Demographics: young working adults 18-35, personal finance, cost of living;`, last 30 days) to see which money
    topics are over-performing. Prefer timely topics; fall back to the backlog.
 4. **Pick the week:** first call Metricool `getScheduledPosts` for the coming Mon–Sat and keep everything already
-   scheduled; fill only the free slots so the week totals **4 posts: 3 main episodes (45–55 s, story format) +
-   1 quick hit (15–25 s, one striking number)**. If the week is already full, make nothing new.
-   **Monthly cap:** Metricool's plan allows 20 posts per calendar month. Count this month's Metricool posts
+   scheduled; fill only the free **YouTube** slots so the week has **3 YouTube Shorts** (mix of main episodes,
+   45–55 s story format, and the odd quick hit, 15–25 s). If the week is already full, make nothing new.
+   **Long-form (8–10 min, 16:9) is NOT automated yet** — the engine has no widescreen mode. Don't make long-form in
+   weekly runs until this file says it's ready.
+   **Monthly cap:** Metricool's plan allows 20 posts per calendar month (every post counts, any network). Count this month's Metricool posts
    (the "Metricool posts" table in `CONTENT_LOG.md` plus anything in `getScheduledPosts` for the month) and never
    let the month exceed **18**. If a week would cross into the cap, make fewer videos and say so in the summary.
    Count posts by the month they publish in.
@@ -43,9 +47,10 @@ Read this whole file before doing anything.
 7. Finish with a short summary: what's scheduled when, captions, anything skipped and why, key analytics learnings.
 
 ## Posting schedule (Asia/Singapore = Malaysia time)
-Best slots from Metricool: weekdays **6pm** and **10am** (Wed/Thu strongest), weekends weaker.
-Default week: main episodes **Mon 6pm, Wed 6pm, Fri 6pm**; quick hit **Sat 10am**. Never two posts in one day.
-(Adjust days around posts already scheduled.) Re-check `getBestTimeToPostByNetwork` occasionally and adjust.
+**YouTube** (Metricool best times for this audience): **4pm daily is the peak**, 10am second; Wed/Thu strongest,
+weekends weakest. Default: Shorts **Mon, Wed, Fri at 4pm**; long-form (when ready) every other **Thu 4pm**.
+Never two YouTube posts in one day. (Adjust days around posts already scheduled.)
+**TikTok** (owner posts manually): suggest 6pm on the same day the Short goes up on YouTube. Re-check `getBestTimeToPostByNetwork` occasionally and adjust.
 
 ## Writing the script (story format — this is what works)
 - Hook in the first line: personal, surprising, uses "you" ("You spent 3.5 days in traffic last year").
@@ -98,10 +103,18 @@ python3 episode.py ep.mp4 --audio-only               # re-mix sound only
    ```
 2. Commit + push `videos/epNN_name.mp4`. Public URL:
    `https://raw.githubusercontent.com/thaqif0709/thecommoncents/main/videos/epNN_name.mp4`
-3. Metricool `createScheduledPost`, blogId `7457468`, providers `[{"network":"tiktok"}]`, `autoPublish: true`,
-   `draft: false`, timezone `Asia/Singapore`, media = the raw URL, and
+3. Metricool `createScheduledPost`, blogId `7457468`, `autoPublish: true`,
+   `draft: false`, timezone `Asia/Singapore`, media = the raw URL. TikTok-only fields (only if ever posting to TikTok):
    `tiktokData: {"title": "<short title — required>", "privacyOption": "PUBLIC_TO_EVERYONE", "isAigc": true,
    "disableComment": false, "disableDuet": false, "disableStitch": false, "autoAddMusic": false,
    "commercialContentThirdParty": false, "commercialContentOwnBrand": false, "photoCoverIndex": 0}`.
    Caption: hook line + question + emoji (sparingly) + 5–8 hashtags (#malaysia #duit #ekonomi #fyp + topic tags).
+   **YouTube Shorts (default):** providers `[{"network":"youtube"}]`, media = raw URL, `text` = description
+   (hook + question + "Educational, not financial advice." + 3–5 hashtags incl. #shorts), and
+   `youtubeData: {"title": "<≤70 chars, hook-style, includes the key number>", "type": "short", "privacy": "public",
+   "madeForKids": false, "category": "EDUCATION", "tags": [...8–12 keywords incl. malaysia, duit, ekonomi...],
+   "isAiGeneratedContent": true}`. Leave `notifySubscribers` out.
 4. Confirm each post appears in `getScheduledPosts` and log it in `CONTENT_LOG.md`.
+5. **TikTok kit for the owner:** append to `TIKTOK_KIT.md` (newest first) one block per new video: the public raw
+   video URL, a TikTok caption (hook + question + 5–8 hashtags), a suggested day/time (6pm), and a pinned-comment
+   question. Mention in the run summary that new TikTok kits are ready.
