@@ -10,10 +10,18 @@
 | 05 | RM100 in 2015 → RM122 today (CPI) | quick hit | Fri 23 Oct 2026 6pm | scheduled | trend: "then vs now" comparisons |
 | 06 | RM2,000 minimum wage — who pays? (Budget 2027) | main | Sun 25 Oct 2026 10am | scheduled | lowkey controversial, both sides |
 
+### YouTube Shorts (Metricool, 4pm MYT, platform-neutral end card)
+| # | Topic | YouTube title | Publishes (MYT) | Status |
+|---|---|---|---|---|
+| 03 | Traffic jams | Why Malaysia Is Always Jammed (3.5 Days a Year in Traffic) | Sat 17 Oct 2026 4pm | scheduled — channel opener |
+| 04 | Tax relief | RM12,000 Tax Relief Doesn't Mean RM12,000 Back (Budget 2027) | Mon 19 Oct 2026 4pm | scheduled |
+| 05 | RM100 in 2015 | RM100 in 2015 = RM122 Today? Malaysia's Inflation in 20 Seconds | Wed 21 Oct 2026 4pm | scheduled |
+| 06 | Minimum wage | RM2,000 Minimum Wage: Who Actually Pays For It? | Fri 23 Oct 2026 4pm | scheduled |
+
 ## Metricool posts per month (plan limit 20, our cap 18)
 | Month | Posted/scheduled via Metricool |
 |---|---|
-| Oct 2026 | 3 (ep04 21 Oct, ep05 23 Oct, ep06 25 Oct) — ep01/ep03 were posted manually and don't count |
+| Oct 2026 | 7 — TikTok: ep04 21, ep05 23, ep06 25 Oct; YouTube: ep03 17, ep04 19, ep05 21, ep06 23 Oct. (ep01/ep03 TikToks were posted manually and don't count) |
 
 ## Analytics
 ### 16 Oct 2026 (first look)
