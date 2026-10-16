@@ -50,6 +50,8 @@ Read this whole file before doing anything.
 **YouTube** (Metricool best times for this audience): **4pm daily is the peak**, 10am second; Wed/Thu strongest,
 weekends weakest. Default: Shorts **Mon, Wed, Fri at 4pm**; long-form (when ready) every other **Thu 4pm**.
 Never two YouTube posts in one day. (Adjust days around posts already scheduled.)
+**Always compute weekdays with `date -d YYYY-MM-DD +%a` (and the current Malaysia time with
+`TZ=Asia/Kuala_Lumpur date`) — never assume which day a date falls on. Never schedule a slot that has already passed.**
 **TikTok** (owner posts manually): suggest 6pm on the same day the Short goes up on YouTube. Re-check `getBestTimeToPostByNetwork` occasionally and adjust.
 
 ## Writing the script (story format — this is what works)

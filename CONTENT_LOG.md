@@ -3,12 +3,12 @@
 ## Posted / scheduled
 | # | Topic | Format | Posted (MYT) | Status | Notes |
 |---|---|---|---|---|---|
-| 01 | Big Mac prices around the world | main | Wed 15 Oct 2026 ~10pm | live | generic/global topic, pre-music engine |
+| 01 | Big Mac prices around the world | main | Thu 15 Oct 2026 ~10pm | live | generic/global topic, pre-music engine |
 | 02 | Petrol subsidies (Myvi vs SUV) | main | — | **skipped by owner** | draft deleted from Metricool (16 Oct); video kept in repo, could be reused later |
-| 03 | Why Malaysia is always jammed | main | Thu 16 Oct 2026 ~1pm | live | first story-format + music post |
-| 04 | RM12,000 tax relief ≠ RM12,000 back (Budget 2027) | main | Tue 21 Oct 2026 6pm | scheduled | trend: tax relief explainers going viral |
-| 05 | RM100 in 2015 → RM122 today (CPI) | quick hit | Thu 23 Oct 2026 6pm | scheduled | trend: "then vs now" comparisons |
-| 06 | RM2,000 minimum wage — who pays? (Budget 2027) | main | Sat 25 Oct 2026 10am | scheduled | lowkey controversial, both sides |
+| 03 | Why Malaysia is always jammed | main | Fri 16 Oct 2026 ~1pm | live | first story-format + music post |
+| 04 | RM12,000 tax relief ≠ RM12,000 back (Budget 2027) | main | Wed 21 Oct 2026 6pm | scheduled | trend: tax relief explainers going viral |
+| 05 | RM100 in 2015 → RM122 today (CPI) | quick hit | Fri 23 Oct 2026 6pm | scheduled | trend: "then vs now" comparisons |
+| 06 | RM2,000 minimum wage — who pays? (Budget 2027) | main | Sun 25 Oct 2026 10am | scheduled | lowkey controversial, both sides |
 
 ## Metricool posts per month (plan limit 20, our cap 18)
 | Month | Posted/scheduled via Metricool |
