@@ -10,6 +10,11 @@
 | 05 | RM100 in 2015 → RM122 today (CPI) | quick hit | Thu 23 Oct 2026 6pm | scheduled | trend: "then vs now" comparisons |
 | 06 | RM2,000 minimum wage — who pays? (Budget 2027) | main | Sat 25 Oct 2026 10am | scheduled | lowkey controversial, both sides |
 
+## Metricool posts per month (plan limit 20, our cap 18)
+| Month | Posted/scheduled via Metricool |
+|---|---|
+| Oct 2026 | 3 (ep04 21 Oct, ep05 23 Oct, ep06 25 Oct) — ep01/ep03 were posted manually and don't count |
+
 ## Analytics
 ### 16 Oct 2026 (first look)
 | Post | Age | Views | Likes | Comments | Shares |

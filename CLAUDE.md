@@ -30,8 +30,12 @@ Read this whole file before doing anything.
    Demographics: young working adults 18-35, personal finance, cost of living;`, last 30 days) to see which money
    topics are over-performing. Prefer timely topics; fall back to the backlog.
 4. **Pick the week:** first call Metricool `getScheduledPosts` for the coming Mon–Sat and keep everything already
-   scheduled; fill only the free slots so the week totals 3 main episodes (45–55 s, story format) + 2 quick hits
-   (15–25 s, one striking number). If the week is already full, make nothing new.
+   scheduled; fill only the free slots so the week totals **4 posts: 3 main episodes (45–55 s, story format) +
+   1 quick hit (15–25 s, one striking number)**. If the week is already full, make nothing new.
+   **Monthly cap:** Metricool's plan allows 20 posts per calendar month. Count this month's Metricool posts
+   (the "Metricool posts" table in `CONTENT_LOG.md` plus anything in `getScheduledPosts` for the month) and never
+   let the month exceed **18**. If a week would cross into the cap, make fewer videos and say so in the summary.
+   Count posts by the month they publish in.
    Don't repeat a topic from `CONTENT_LOG.md` unless there's genuinely new news.
 5. For each video: research + `SOURCES.md` → `script.json` → voice → `episode.py` → `--preview` stills (look at
    them!) → frame scan (below) → full render → upload version → push → schedule.
@@ -40,8 +44,8 @@ Read this whole file before doing anything.
 
 ## Posting schedule (Asia/Singapore = Malaysia time)
 Best slots from Metricool: weekdays **6pm** and **10am** (Wed/Thu strongest), weekends weaker.
-Default week: main episodes **Mon 6pm, Wed 6pm, Fri 6pm**; quick hits **Tue 10am, Sat 10am**. Never two posts in
-one day. Re-check `getBestTimeToPostByNetwork` occasionally and adjust.
+Default week: main episodes **Mon 6pm, Wed 6pm, Fri 6pm**; quick hit **Sat 10am**. Never two posts in one day.
+(Adjust days around posts already scheduled.) Re-check `getBestTimeToPostByNetwork` occasionally and adjust.
 
 ## Writing the script (story format — this is what works)
 - Hook in the first line: personal, surprising, uses "you" ("You spent 3.5 days in traffic last year").
