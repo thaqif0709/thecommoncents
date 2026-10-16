@@ -1,0 +1,1 @@
+Third: local costs. Taxes, energy, and ingredients are all priced locally.

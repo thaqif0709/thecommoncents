@@ -1,0 +1,9 @@
+# full-quality renders and previews live only in the workspace; videos/ holds the upload versions
+episodes/**/*.mp4
+episodes/**/preview_*.png
+episodes/**/chk*.png
+episodes/**/zoom.png
+episodes/**/mix.wav
+__pycache__/
+*.pyc
+ffmpeg2pass-*
