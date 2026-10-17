@@ -54,6 +54,13 @@ Never two YouTube posts in one day. (Adjust days around posts already scheduled.
 `TZ=Asia/Kuala_Lumpur date`) — never assume which day a date falls on. Never schedule a slot that has already passed.**
 **TikTok** (owner posts manually): suggest 6pm on the same day the Short goes up on YouTube. Re-check `getBestTimeToPostByNetwork` occasionally and adjust.
 
+## Visual style (owner-approved — keep it)
+The 1930s rubber-hose stage look (curtains, film grain, Luckiest Guy titles, palette, prop faces, ragtime) is the
+brand. Weekly runs must **not** redesign it. Allowed without asking: small, data-driven tweaks (faster first-second
+hook frame, pacing, caption wording, new props/backdrops that match the style). Anything bigger — new fonts,
+palette, characters, overall look — propose it in the run summary and wait for the owner.
+Judge style only on patterns across 10+ videos, not single posts.
+
 ## Writing the script (story format — this is what works)
 - Hook in the first line: personal, surprising, uses "you" ("You spent 3.5 days in traffic last year").
 - Characters/props in a mini story, one twist ("the SUV gets double"), fair "other side", then a **question** to
