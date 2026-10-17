@@ -44,7 +44,11 @@ Read this whole file before doing anything.
 5. For each video: research + `SOURCES.md` → `script.json` → voice → `episode.py` → `--preview` stills (look at
    them!) → frame scan (below) → full render → upload version → push → schedule.
 6. Commit everything (no big renders — see `.gitignore`), update `CONTENT_LOG.md`, push.
-7. Finish with a short summary: what's scheduled when, captions, anything skipped and why, key analytics learnings.
+7. **Journey log:** append a "Weekly snapshots" block to `journey/JOURNEY.md` (template at the bottom of that file):
+   real numbers only (subscribers, views, best video, videos made, earnings), what changed, what we learned; tick
+   any milestones reached (with date); save one behind-the-scenes image (e.g. that week's contact sheet) to
+   `journey/assets/NN_description.png`. Never invent or round up numbers there.
+8. Finish with a short summary: what's scheduled when, captions, anything skipped and why, key analytics learnings.
 
 ## Posting schedule (Asia/Singapore = Malaysia time)
 **YouTube** (Metricool best times for this audience): **4pm daily is the peak**, 10am second; Wed/Thu strongest,
