@@ -50,6 +50,21 @@ Read this whole file before doing anything.
    `journey/assets/NN_description.png`. Never invent or round up numbers there.
 8. Finish with a short summary: what's scheduled when, captions, anything skipped and why, key analytics learnings.
 
+## Reference creators (for topic inspiration only)
+Successful Malaysian money creators to check during the weekly trend scan (step 3) — see which **topics** are
+taking off for them right now:
+| Creator | Platform | Niche | Size (checked 17 Oct 2026) |
+|---|---|---|---|
+| Tim Tiah — @timtiah | TikTok (+ YouTube @timtiah88) | money, policy, history, his own takes | ~70.5K followers, ~1.7K videos |
+| Financial Faiz — @financialfaiz | TikTok | EPF, salaries, personal finance (BM) | ~781K followers, ~2.4K videos |
+| Zarif Kira — @zarifkira | TikTok | car affordability, business, finance (BM) | ~329K followers, ~710 videos |
+| @leong.sabah | Instagram Reels | tax / Budget explainers (BM) | had a 1.4M-view tax relief reel (Oct 2026) |
+How to check: vidIQ `vidiq_instagram_tiktok_outlier_search` with queries on their topics (they often appear in
+the Malaysian money results), `vidiq_ig_profile_reels` for Instagram accounts, and a web search for their recent
+viral posts. **Rules:** use them only to spot hot *topics*. Never copy their scripts, angles, jokes, titles or
+visuals; always do our own research and our own take. If a video directly responds to one of their claims, be
+fair and factual — no call-outs or digs at named creators.
+
 ## Posting schedule (Asia/Singapore = Malaysia time)
 **YouTube** (Metricool best times for this audience): **4pm daily is the peak**, 10am second; Wed/Thu strongest,
 weekends weakest. Default: Shorts **Mon, Wed, Fri at 4pm**; long-form (when ready) every other **Thu 4pm**.
