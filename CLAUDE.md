@@ -44,6 +44,10 @@ Read this whole file before doing anything.
 5. For each video: research + `SOURCES.md` → `script.json` → voice → `episode.py` → `--preview` stills (look at
    them!) → frame scan (below) → full render → upload version → push → schedule.
 6. Commit everything (no big renders — see `.gitignore`), update `CONTENT_LOG.md`, push.
+   **Auto-merge to main (owner-authorised):** after pushing the session branch, fast-forward `main` yourself
+   (`git fetch origin main`, confirm main is an ancestor of HEAD, then `git push origin HEAD:main`; if it isn't,
+   merge main in first). No PR needed. Do this even on runs that make no videos (log/journey updates must reach
+   main), and do it **before** scheduling in Metricool, since the raw video URLs are served from `main`.
 7. **Journey log:** append a "Weekly snapshots" block to `journey/JOURNEY.md` (template at the bottom of that file):
    real numbers only (subscribers, views, best video, videos made, earnings), what changed, what we learned; tick
    any milestones reached (with date); save one behind-the-scenes image (e.g. that week's contact sheet) to
