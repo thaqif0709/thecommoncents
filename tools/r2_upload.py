@@ -13,6 +13,7 @@ import boto3
 from botocore.config import Config
 
 GB = 1024 ** 3
+PUBLIC_URL = "https://pub-7a1cea1592884db0a8d119d865487396.r2.dev"   # bucket "thecommoncents" public r2.dev address (not a secret)
 FREE_GB, WARN_GB, STOP_GB = 10.0, 8.0, 9.5
 
 def env(*names):
@@ -74,6 +75,6 @@ if after > WARN_GB * GB:
 key = a.key or f"videos/{os.path.basename(a.file)}"
 ctype = "video/mp4" if a.file.endswith(".mp4") else "application/octet-stream"
 s3.upload_file(a.file, bucket, key, ExtraArgs={"ContentType": ctype})
-base = env("R2_PUBLIC_URL")
+base = env("R2_PUBLIC_URL") or PUBLIC_URL
 print("uploaded:", key)
 print("public URL:", f"{base.rstrip('/')}/{key}" if base else "(set R2_PUBLIC_URL to print it)")
