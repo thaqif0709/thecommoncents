@@ -45,6 +45,34 @@
 - Week of 19–24 Oct already has 3 YouTube Shorts scheduled (Mon 19, Wed 21, Fri 23, 4pm) → no new videos made this run.
 - Next run (Sun 25 Oct): pick from backlog; October is at 7/18 Metricool posts so cap is no issue.
 
+## Outlier log (vidIQ, owner's rule: ≤3 months ≥100 VPH, ≤1 year ≥20 VPH)
+### 18 Oct 2026 — pivot to global topics
+| Video | Channel subs | Views | VPH |
+|---|---|---|---|
+| This $520 Billion Family Owns America | 7K | 963K | 2,375 |
+| Why Did Human Progress EXPLODE in the Last 100 Years? (AI-labelled) | 8.6K | 870K | 2,290 |
+| America Had No National Currency Until 1863 — So What Were People Paying With? | 3.5K | 239K | 1,854 |
+| What Happened to the Nizam of Hyderabad, the Richest Man on Earth? | 7K | 703K | 734 |
+| The ENTIRE History of Amazon in 20 Minutes (AI-labelled) | 4K | 129K | 571 |
+| How the British Empire Actually Made Its Money (AI-labelled) | 5K | 384K | 406 |
+| Why Did 90% of the World's Population Die in Just 200 Years (Bronze Age collapse, AI-labelled) | 1.6K | 367K | 337 |
+| What Actually Survived Weimar's Hyperinflation (AI-labelled) | 1.6K | 119K | 286 |
+| What Cowboys REALLY Did With Their Money (AI-labelled) | 2.1K | 264K | 252 |
+| America Had No Income Tax Until 1913 — So How Did the Government Make Money? | 3.5K | 485K | 249 |
+- Money/economic history breaks out on brand-new channels again and again; AI-labelled channels do fine.
+- Winning title shapes: "X Had No Y Until [year] — So How/What…?", "What Actually Survived…", "How [X] Actually Made
+  Its Money", "What Happened to…", "The ENTIRE History of [company] in N Minutes".
+- Malaysia search found almost no history/economics competition, but the audience (and ad rates) is far smaller.
+
+## Global backlog (from outliers — our own research and script)
+- Long-form: Zimbabwe printed a 100-trillion-dollar note — what actually survived? (hyperinflation)
+- Long-form: Before banks: how people stored money for 4,000 years
+- Long-form: What $1 actually bought in 1933 (Great Depression prices — matches our 1930s look)
+- Long-form: The richest man in history? Mansa Musa and the gold that crashed Cairo's economy
+- Long-form: The ENTIRE history of Monopoly / McDonald's / Coca-Cola money (business history; never draw logos)
+- Long-form: The tulip bubble — did people really lose everything? (myth vs record)
+- Shorts: one-fact hooks cut from the long-forms (e.g. "In 1923 a loaf of bread cost 200 billion marks")
+
 ## Backlog (verified-safe ideas, not yet made)
 - Why your imported car costs so much (import + excise + sales tax stack; Proton S70 affordability trend)
 - Johor vs Singapore: same job, different pay (SGD≈RM3.19 on 6 Oct 2026; 300k+ daily commuters — re-verify)

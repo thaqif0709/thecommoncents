@@ -1,6 +1,9 @@
 # The Common Cents — production guide
 
-Malaysian money explainers in a 1930s rubber-hose cartoon style. **YouTube is the priority platform**
+Money & history explainers for a **global English-speaking audience**, in a 1930s rubber-hose cartoon style.
+**Goal: YouTube Partner Program** (1,000 subs + 4,000 long-form watch hours, or 10M Shorts views/90 days).
+On 18 Oct 2026 the owner dropped the Malaysia-only focus: "we do any topic to get us monetized". Pick topics by
+what is proven to break out (see *Topic research* below), not by country. **YouTube is the priority platform**
 (channel "The Common Cents", YouTube channel id `UCHi1aUFPe-cM87lriJhiF9w`, handle is NOT @thecommoncents — that
 one belongs to someone else). TikTok (@thecommoncents) is posted **manually by the owner** from a kit we prepare.
 The owner has authorised **autonomous weekly production and scheduling on YouTube** (no per-post approval).
@@ -8,12 +11,14 @@ Read this whole file before doing anything.
 
 ## Non-negotiable rules
 1. **Facts:** every number on screen or in the voiceover needs **two independent sources** found that day
-   (official sources preferred: DOSM, BNM, MOF, LHDN, Budget documents; reputable news second). If a figure
+   (official/academic sources preferred: central banks, statistics offices, government archives, university
+   history pages, museums; reputable news and published books second; never another YouTube video). If a figure
    can't be confirmed, cut it or reword to something you can confirm. Use "about"/"~" for rounded figures and
    put dates on anything that changes (prices, rates, quotas). Record sources in `episodes/NN-name/SOURCES.md`.
-2. **No 3R topics** (race, religion, royalty), no ethnic comparisons, no Bumiputera policy, no party politics or
-   election takes, no targeting individuals. Money and policy mechanics only, explained fairly (show both sides
-   on contested questions).
+2. **Brand-safe topics only** (they also earn full ad rates): no race/religion-based framing, no ethnic comparisons,
+   no current party politics or election takes, no targeting living private individuals, no graphic violence,
+   atrocities or tragedy-as-entertainment, no conspiracy theories presented as fact. Malaysian topics: still no 3R
+   or Bumiputera policy. Contested questions: explain both sides fairly.
 3. **AI label on:** every YouTube post sets `"isAiGeneratedContent": true` (and any TikTok post `"isAigc": true`).
 4. **No copyrighted characters, logos or music.** Everything is drawn in code; music/SFX are synthesised
    (`audio.py`). Brand names may be mentioned (e.g. Myvi, Grab) but never drawn as logos.
@@ -27,10 +32,9 @@ Read this whole file before doing anything.
    (TKPO02 published, TKPO05 description, TKPO07 views, TKPO08 likes, TKPO09 comments, TKPO10 shares,
    TKPO13 full-watch rate, TKPO15 avg watch time, TKPO9999 engagement) for the last 28 days.
    Append a dated table + 3–5 bullet learnings to `CONTENT_LOG.md`.
-3. **Trends:** web-search this week's Malaysian money/economy news and use vidIQ
-   `vidiq_instagram_tiktok_outlier_search` (audience: `Culture/Region: Malaysia/Malaysian; Global: false;
-   Demographics: young working adults 18-35, personal finance, cost of living;`, last 30 days) to see which money
-   topics are over-performing. Prefer timely topics; fall back to the backlog.
+3. **Trends:** run the *Topic research* method below (vidIQ outliers, Shorts and long-form). Pick topics that
+   are breaking out on small channels right now; fall back to the backlog. Global topics first; a Malaysian topic
+   only if it's breaking out too.
 4. **Pick the week:** first call Metricool `getScheduledPosts` for the coming Mon–Sat and keep everything already
    scheduled; fill only the free **YouTube** slots so the week has **3 YouTube Shorts** (mix of main episodes,
    45–55 s story format, and the odd quick hit, 15–25 s). If the week is already full, make nothing new.
@@ -54,24 +58,30 @@ Read this whole file before doing anything.
    `journey/assets/NN_description.png`. Never invent or round up numbers there.
 8. Finish with a short summary: what's scheduled when, captions, anything skipped and why, key analytics learnings.
 
-## Reference creators (for topic inspiration only)
-Successful Malaysian money creators to check during the weekly trend scan (step 3) — see which **topics** are
-taking off for them right now:
-| Creator | Platform | Niche | Size (checked 17 Oct 2026) |
-|---|---|---|---|
-| Tim Tiah — @timtiah | TikTok (+ YouTube @timtiah88) | money, policy, history, his own takes | ~70.5K followers, ~1.7K videos |
-| Financial Faiz — @financialfaiz | TikTok | EPF, salaries, personal finance (BM) | ~781K followers, ~2.4K videos |
-| Zarif Kira — @zarifkira | TikTok | car affordability, business, finance (BM) | ~329K followers, ~710 videos |
-| @leong.sabah | Instagram Reels | tax / Budget explainers (BM) | had a 1.4M-view tax relief reel (Oct 2026) |
-How to check: vidIQ `vidiq_instagram_tiktok_outlier_search` with queries on their topics (they often appear in
-the Malaysian money results), `vidiq_ig_profile_reels` for Instagram accounts, and a web search for their recent
-viral posts. **Rules:** use them only to spot hot *topics*. Never copy their scripts, angles, jokes, titles or
-visuals; always do our own research and our own take. If a video directly responds to one of their claims, be
-fair and factual — no call-outs or digs at named creators.
+## Topic research (the outlier method — this is how we pick topics)
+Find videos that are beating their channel's normal views, then make **our own** video on the same topic.
+- vidIQ `vidiq_outliers` (long-form and `contentType: "short"`), `sort: "vph"`, `maxSubscribers: 50000` (small
+  channels = the topic is doing the work, not the creator). Thresholds (owner's rule):
+  **≤ 3 months old: ≥ 100 views/hour** (`publishedWithin: "threeMonths", minVph: 100`);
+  **≤ 1 year old: ≥ 20 views/hour** (`publishedWithin: "oneYear", minVph: 20`).
+- Search areas, in priority order: money/economic history ("X had no Y until 19xx — so how…?", hyperinflations,
+  "how [empire/family/company] made its money", what things cost in the past); business history ("the entire
+  history of [company]"); how people lived/worked in the past; big-picture "why did…" history. These pay
+  finance/education ad rates and suit the 1930s look.
+- Skip outliers that break rule 2 (atrocities, religion, current politics, conspiracies) even if they're hot.
+- **Recreate = same topic or title format, everything else ours.** Never copy scripts, structure beat-for-beat,
+  footage, thumbnails, or exact titles; do our own two-source research. Re-uploads/close copies get demonetised.
+- Log each week's top 5–10 outliers (title, channel subs, views, VPH) under "Outlier log" in `CONTENT_LOG.md`.
+Proven examples found 18 Oct 2026: "America Had No National Currency Until 1863 — So What Were People Paying With?"
+(3.5K-sub channel, 239K views), "How the British Empire Actually Made Its Money" (5K subs, 384K, AI-labelled),
+"What Actually Survived Weimar's Hyperinflation" (1.6K subs, 119K, AI-labelled), "What Happened to the Nizam of
+Hyderabad, the Richest Man on Earth?" (7K subs, 703K), "The ENTIRE History of Amazon in 20 Minutes" (4K subs, 129K).
 
 ## Posting schedule (Asia/Singapore = Malaysia time)
-**YouTube** (Metricool best times for this audience): **4pm daily is the peak**, 10am second; Wed/Thu strongest,
-weekends weakest. Default: Shorts **Mon, Wed, Fri at 4pm**; long-form (when ready) every other **Thu 4pm**.
+**YouTube** — audience is now global (US/UK/India English speakers), so post when it's late morning in the US and
+afternoon in the UK: default **10pm Malaysia time** (= 10am New York, 3pm London). Shorts **Mon, Wed, Fri 10pm**;
+long-form (when ready) **Thu 10pm**. Posts already scheduled at 4pm stay as they are. Once we have a few weeks of
+global data, re-check `getBestTimeToPostByNetwork` (youtube) and adjust.
 Never two YouTube posts in one day. (Adjust days around posts already scheduled.)
 **Always compute weekdays with `date -d YYYY-MM-DD +%a` (and the current Malaysia time with
 `TZ=Asia/Kuala_Lumpur date`) — never assume which day a date falls on. Never schedule a slot that has already passed.**
@@ -90,7 +100,8 @@ Judge style only on patterns across 10+ videos, not single posts.
   the audience. Every ending asks a question and says "Comment below, and follow The Common Cents."
 - 8–10 scenes, one idea each, 45–55 s total. Write numbers as words for the voice ("one ringgit ninety-nine") and
   map them back to figures with caption `SUBS`.
-- Malaysian English, light local flavour (mamak, Myvi, Causeway). No slang that ages badly.
+- Plain international English for a global audience; amounts in US dollars (or the local currency of the story,
+  with a USD conversion and a date). No slang that ages badly.
 
 ## Making the video
 ```bash
@@ -140,11 +151,11 @@ python3 episode.py ep.mp4 --audio-only               # re-mix sound only
    `tiktokData: {"title": "<short title — required>", "privacyOption": "PUBLIC_TO_EVERYONE", "isAigc": true,
    "disableComment": false, "disableDuet": false, "disableStitch": false, "autoAddMusic": false,
    "commercialContentThirdParty": false, "commercialContentOwnBrand": false, "photoCoverIndex": 0}`.
-   Caption: hook line + question + emoji (sparingly) + 5–8 hashtags (#malaysia #duit #ekonomi #fyp + topic tags).
+   Caption: hook line + question + emoji (sparingly) + 5–8 hashtags (#history #money #economics #fyp + topic tags).
    **YouTube Shorts (default):** providers `[{"network":"youtube"}]`, media = raw URL, `text` = description
    (hook + question + "Educational, not financial advice." + 3–5 hashtags incl. #shorts), and
    `youtubeData: {"title": "<≤70 chars, hook-style, includes the key number>", "type": "short", "privacy": "public",
-   "madeForKids": false, "category": "EDUCATION", "tags": [...8–12 keywords incl. malaysia, duit, ekonomi...],
+   "madeForKids": false, "category": "EDUCATION", "tags": [...8–12 topic keywords, e.g. history, money, economics...],
    "isAiGeneratedContent": true}`. Leave `notifySubscribers` out.
 4. Confirm each post appears in `getScheduledPosts` and log it in `CONTENT_LOG.md`.
 5. **TikTok kit for the owner:** append to `TIKTOK_KIT.md` (newest first) one block per new video: the public raw
