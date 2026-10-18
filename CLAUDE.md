@@ -9,6 +9,12 @@ one belongs to someone else). TikTok (@thecommoncents) is posted **manually by t
 The owner has authorised **autonomous weekly production and scheduling on YouTube** (no per-post approval).
 Read this whole file before doing anything.
 
+> **18 Oct 2026 — LONG-FORM ONLY.** The owner cancelled the Shorts and wants 16:9 long-form videos only
+> (~14–18 min). Read `LONGFORM.md` for the format we copy from breakout videos. The weekly scheduled task is
+> **paused** until the long-form pipeline is proven; the Shorts sections below are kept for reference only. Make
+> no new Shorts unless the owner asks. Long-form videos are reviewed by the owner before they're scheduled
+> until this note says otherwise.
+
 ## Non-negotiable rules
 1. **Facts:** every number on screen or in the voiceover needs **two independent sources** found that day
    (official/academic sources preferred: central banks, statistics offices, government archives, university
