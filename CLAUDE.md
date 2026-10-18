@@ -142,6 +142,13 @@ python3 episode.py ep.mp4 --audio-only               # re-mix sound only
   too loud, current values are approved — don't raise them.
 
 ## Upload + schedule
+**Long-form videos (too big for GitHub) go to Cloudflare R2:** `python3 tools/r2_upload.py videos/epNN_name.mp4` prints
+the public URL to give Metricool. R2's free tier is **10 GB**; going over is billed. The tool totals the bucket before
+every upload: it **warns over 8 GB** and **refuses over 9.5 GB**. Never use `--force` without the owner's OK. Videos are
+only needed until YouTube has them, so once a video has been live for 30+ days run
+`python3 tools/r2_upload.py --prune-days 30 --yes`. Put the bucket usage line (`--status`) in every run summary, and
+tell the owner plainly whenever it's over 8 GB.
+
 1. Upload version (< 30 MB, two-pass):
    ```bash
    dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 ep.mp4)
