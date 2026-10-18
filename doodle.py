@@ -681,3 +681,25 @@ def run(draw, subs=(), sfx=(), cams=None, music=True):
         if (k - k0) % 900 == 0: print(f"frame {k - k0}/{k1 - k0}", flush=True)
     p.stdin.close(); p.wait()
     print("done", OUT, f"{t_to - t_from:.1f}s")
+
+# ---------- thumbnails (1280x720), copying the winning layout ----------
+def thumbnail(path, headline, tag="", scene=None, bg=BG, banner=RED):
+    """Huge caps headline on a coloured banner (top), small era tag above it, scene(d) draws the art below
+    (one reacting character + one money visual). Saves path and a 320x180 phone-size check next to it."""
+    TW, TH = 1280, 720
+    big = Image.new("RGB", (W, H), bg); d = ImageDraw.Draw(big)
+    if scene: scene(d)
+    img = big.resize((TW, TH), Image.LANCZOS); d = ImageDraw.Draw(img)
+    size = 118; f = F(size)
+    while d.textlength(headline, font=f) > TW - 90: size -= 4; f = F(size)
+    tw = d.textlength(headline, font=f)
+    y0 = 70 if tag else 30
+    d.rectangle((40, y0, 40 + tw + 50, y0 + size * 1.12), fill=banner)
+    d.text((65, y0 + size * 0.56), headline, font=f, fill=WHITE, anchor="lm", stroke_width=4, stroke_fill=INK)
+    if tag:
+        ft = F(40, "black"); w2 = d.textlength(tag, font=ft)
+        d.rectangle((40, 18, 40 + w2 + 30, 70), fill=INK)
+        d.text((55, 44), tag, font=ft, fill=WHITE, anchor="lm")
+    img.save(path)
+    img.resize((320, 180), Image.LANCZOS).save(path.replace(".png", "_phone.png"))
+    return img
