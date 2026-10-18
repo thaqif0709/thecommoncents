@@ -601,7 +601,10 @@ def camera(img, sc, t):
 _IMGS = {}
 def _load(path):
     if path not in _IMGS:
-        im = Image.open(path).convert("RGB")
+        if os.path.exists(path): im = Image.open(path).convert("RGB")
+        else:                                                         # placeholder until the image is generated
+            im = Image.new("RGB", (W, H), (96, 88, 78)); dd = ImageDraw.Draw(im)
+            dd.text((W / 2, H / 2), os.path.basename(path), font=F(60, "bold"), fill=(200, 190, 175), anchor="mm")
         r = max(W * 1.18 / im.width, H * 1.18 / im.height)          # oversize so pans never show an edge
         _IMGS[path] = im.resize((int(im.width * r + 0.5), int(im.height * r + 0.5)), Image.LANCZOS)
     return _IMGS[path]

@@ -10,3 +10,4 @@ ffmpeg2pass-*
 episodes/**/render.log
 banner_preview.png
 banner_safe_area.png
+episodes/**/preview/
