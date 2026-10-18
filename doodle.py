@@ -597,6 +597,71 @@ def camera(img, sc, t):
     x0 = clamp(fx - cw * fx / W, 0, W - cw); y0 = clamp(fy - ch * fy / H, 0, H - ch)
     return img.resize((W, H), Image.BILINEAR, box=(x0, y0, x0 + cw, y0 + ch))
 
+# ---------- painted scenes (AI illustration backgrounds, documentary style) ----------
+_IMGS = {}
+def _load(path):
+    if path not in _IMGS:
+        im = Image.open(path).convert("RGB")
+        r = max(W * 1.18 / im.width, H * 1.18 / im.height)          # oversize so pans never show an edge
+        _IMGS[path] = im.resize((int(im.width * r + 0.5), int(im.height * r + 0.5)), Image.LANCZOS)
+    return _IMGS[path]
+
+MOVES = {   # (zoom0, zoom1, (x0, y0) -> (x1, y1) focus as 0..1 of the image)
+    "in": (1.0, 1.12, (0.5, 0.5), (0.5, 0.45)), "out": (1.12, 1.0, (0.5, 0.45), (0.5, 0.5)),
+    "left": (1.06, 1.08, (0.62, 0.5), (0.38, 0.5)), "right": (1.06, 1.08, (0.38, 0.5), (0.62, 0.5)),
+    "up": (1.06, 1.1, (0.5, 0.62), (0.5, 0.38)), "down": (1.06, 1.1, (0.5, 0.38), (0.5, 0.62)),
+}
+def painted(img_canvas, path, t, dur, move="in", dim=0.0):
+    """Paste a slowly moving illustration filling the frame (Ken Burns). dim 0..1 darkens it for text overlays."""
+    src = _load(path)
+    z0, z1, (ax, ay), (bx, by) = MOVES.get(move, MOVES["in"])
+    u = ease_in_out(t / max(dur, 0.1))
+    z = lerp(z0, z1, u); fx, fy = lerp(ax, bx, u), lerp(ay, by, u)
+    cw, ch = src.width / 1.18 / z, src.height / 1.18 / z
+    x0 = clamp(fx * src.width - cw / 2, 0, src.width - cw); y0 = clamp(fy * src.height - ch / 2, 0, src.height - ch)
+    frame_ = src.resize((W, H), Image.BILINEAR, box=(x0, y0, x0 + cw, y0 + ch))
+    if dim > 0: frame_ = Image.blend(frame_, Image.new("RGB", (W, H), (12, 10, 8)), dim)
+    img_canvas.paste(frame_)
+
+def crossfade(img_canvas, a_path, b_path, t, dur, at, fade=0.6, move_a="in", move_b="in"):
+    """Show a_path, then dissolve to b_path at local time `at`."""
+    painted(img_canvas, a_path, t, dur, move_a)
+    k = prog(t, at, fade)
+    if k > 0:
+        tmp = Image.new("RGB", (W, H)); painted(tmp, b_path, t, dur, move_b)
+        img_canvas.paste(Image.blend(img_canvas, tmp, k))
+
+_ys, _xs = np.mgrid[0:H, 0:W].astype(np.float32)
+_VIG = (1 - 0.38 * np.clip(((_xs - W / 2) / (W * 0.62)) ** 2 + ((_ys - H / 2) / (H * 0.62)) ** 2, 0, 1) ** 1.5)[..., None]
+_GRAIN = [(np.random.default_rng(k).standard_normal((H, W, 1)).astype(np.float32) * 6) for k in range(4)]
+del _ys, _xs
+def film_finish(img, k):
+    """Vignette + light moving grain (documentary look). Applied only to scenes flagged painted."""
+    a = np.asarray(img, dtype=np.float32) * _VIG + _GRAIN[(k // 2) % 4]
+    return Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
+
+PAINTED = set()   # scene keys whose frames get the film finish (episode adds keys)
+
+def lower_label(d, title, sub="", a=1.0, x=80, y=820):
+    """Documentary lower-third: bold title on a dark strip + small subtitle (for names, places, dates)."""
+    if a <= 0: return
+    f = F(52, "black"); tw = d.textlength(title, font=f)
+    w_ = (tw + 60) * ease_out(a)
+    d.rectangle((x, y - 40, x + w_, y + 40), fill=INK)
+    d.rectangle((x, y - 40, x + 10, y + 40), fill=YELLOW)
+    if a > 0.5: text(d, (x + 32, y + 2), title, 52, fill=WHITE, anchor="lm")
+    if sub and a > 0.7: text(d, (x + 4, y + 70), sub, 32, fill=WHITE, w="semi", anchor="lm", stroke=3, stroke_fill=INK)
+
+def headline(d, s, a=1.0, y=150, size=86, col=WHITE, box=INK):
+    """Big caps statement over a painted scene (dark box behind for readability)."""
+    if a <= 0: return
+    f = F(size, "black")
+    while d.textlength(s, font=f) > 1600: size -= 4; f = F(size, "black")
+    tw = d.textlength(s, font=f)
+    off = (1 - ease_out(a)) * 30
+    d.rectangle((W / 2 - tw / 2 - 30, y - size * 0.7 + off, W / 2 + tw / 2 + 30, y + size * 0.7 + off), fill=box)
+    text(d, (W / 2, y + off), s, size, fill=col)
+
 # ---------- frame + run ----------
 _BGIMG = None
 def background():
@@ -614,7 +679,8 @@ def frame(T):
     img = background().copy()
     d = ImageDraw.Draw(img)
     DRAW[sc["key"]](d, t, sc)
-    img = camera(img, sc, t)
+    if sc["key"] not in PAINTED: img = camera(img, sc, t)
+    else: img = film_finish(img, int(T * FPS))
     d = ImageDraw.Draw(img)
     captions(d, t, sc)
     if T < 0.25 or T > TOTAL - 0.6:   # fade from / to black
