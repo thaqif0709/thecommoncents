@@ -34,6 +34,17 @@
   with a question.
 - Watch-time / traffic-source metrics are empty: owner may need a TikTok Business account (or Metricool needs time).
 
+### 18 Oct 2026 (weekly run, last 28 days)
+| Post | Platform | Views | Likes | Comments | Shares | Engagement % |
+|---|---|---|---|---|---|---|
+| 01 Big Mac | TikTok | 1,063 | 15 | 0 | 0 | 1.4 |
+| 03 Jam | TikTok | 623 | 15 | 1 | 0 | 2.6 |
+| 03 Jam | YouTube Short (live Sat 17 Oct 4pm) | not reported yet | — | — | — | — |
+- Jam got fewer views than Big Mac but ~2x the engagement rate and the only comment: a question ending + local topic drives interaction.
+- Full-watch rate / avg watch time still empty for TikTok (needs Business account); YouTube metrics not populated yet (<2 days old).
+- Week of 19–24 Oct already has 3 YouTube Shorts scheduled (Mon 19, Wed 21, Fri 23, 4pm) → no new videos made this run.
+- Next run (Sun 25 Oct): pick from backlog; October is at 7/18 Metricool posts so cap is no issue.
+
 ## Backlog (verified-safe ideas, not yet made)
 - Why your imported car costs so much (import + excise + sales tax stack; Proton S70 affordability trend)
 - Johor vs Singapore: same job, different pay (SGD≈RM3.19 on 6 Oct 2026; 300k+ daily commuters — re-verify)
