@@ -34,7 +34,8 @@ for k in todo[:args.max]:
                               files={"prompt": (None, prompts[k]), "width": (None, "1920"), "height": (None, "1088")})
             if r.status_code == 200: break
             print(f"  {k}: HTTP {r.status_code} {r.text[:200]}")
-            if r.status_code in (400, 401, 403) or "limit" in r.text.lower(): sys.exit("stopping: auth or daily limit")
+            if r.status_code in (400, 401, 403, 429) or "allocation" in r.text.lower() or "limit" in r.text.lower():
+                sys.exit("stopping: auth error or daily free allowance used up (try again later)")
         except requests.RequestException as e:
             print(f"  {k}: {e}")
         time.sleep(3 * (attempt + 1))
