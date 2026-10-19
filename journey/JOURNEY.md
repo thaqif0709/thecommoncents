@@ -21,6 +21,19 @@ projections presented as results. Newest weekly entry at the bottom.
 | GitHub | RM0 | free public repo |
 | **Earnings so far** | **RM0** | YouTube Partner Program needs 1,000 subs + 4,000 watch hours (or 10M Shorts views) |
 
+## Goal: monetised and earning by 31 Dec 2026 (set 19 Oct 2026)
+YouTube Partner Program = 1,000 subscribers + 4,000 long-form watch hours (12 months). YouTube's review takes a few
+weeks, so the plan is to **apply by ~1 Dec 2026**. Honest odds when set: ~30–40% (needs at least one breakout video).
+Plan: long-form only, **2 videos/week from November**, 2–3 thumbnail options per video, fix what retention data shows,
+double down on any topic that pops. Owner to set up Google AdSense early (YouTube Studio → Earn).
+
+| Checkpoint | Videos | Subscribers | Watch hours | Actual (fill in on the day — real numbers only) |
+|---|---|---|---|---|
+| 1 Nov 2026 | 2–3 | 100 | 300 | |
+| 15 Nov 2026 | 6–7 | 400 | 1,500 | |
+| 1 Dec 2026 | 10–12 | 1,000 | 4,000 → apply | |
+| 31 Dec 2026 | — | — | — | monetised? first earnings? |
+
 ## Milestones
 - [x] 15 Oct 2026 — first video posted (TikTok, Big Mac prices)
 - [x] 16 Oct 2026 — first 1,000 views (Big Mac TikTok, ~15 h after posting: 1,037 views)
@@ -31,7 +44,7 @@ projections presented as results. Newest weekly entry at the bottom.
 - [ ] 100 YouTube subscribers
 - [ ] First video over 10,000 views
 - [ ] 1,000 YouTube subscribers
-- [ ] First long-form video
+- [ ] First long-form video (planned: Zimbabwe, Thu 22 Oct 2026)
 - [ ] 4,000 watch hours / YouTube Partner Program
 - [ ] First ringgit earned
 

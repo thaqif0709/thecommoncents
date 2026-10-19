@@ -15,6 +15,12 @@ Read this whole file before doing anything.
 > no new Shorts unless the owner asks. Long-form videos are reviewed by the owner before they're scheduled
 > until this note says otherwise.
 
+> **Goal (set 19 Oct 2026): monetised and earning by 31 Dec 2026** → apply for the Partner Program by ~1 Dec.
+> From November: **2 long-form videos a week (Mon + Thu, 10pm MYT)**. Every weekly summary reports subscribers and
+> long-form watch hours against the checkpoints in `journey/JOURNEY.md` (1 Nov: 100 subs/300 h; 15 Nov: 400/1,500;
+> 1 Dec: 1,000/4,000) and says plainly whether we're on pace. Make 2–3 thumbnail options per video and flag the
+> owner to run YouTube's "Test & Compare". If a topic breaks out, make a follow-up next.
+
 ## Non-negotiable rules
 1. **Facts:** every number on screen or in the voiceover needs **two independent sources** found that day
    (official/academic sources preferred: central banks, statistics offices, government archives, university
