@@ -34,6 +34,19 @@ double down on any topic that pops. Owner to set up Google AdSense early (YouTub
 | 1 Dec 2026 | 10–12 | 1,000 | 4,000 → apply | |
 | 31 Dec 2026 | — | — | — | monetised? first earnings? |
 
+## Big goal: RM10,000 a month by mid-2028 (set 19 Oct 2026)
+RM10k ≈ US$2,100–2,400/month. At an estimated US$4–10 earned per 1,000 views (finance/history, English audience —
+to be replaced with our real RPM once monetised) that's ~220K–450K views a month: a solid mid-sized channel with
+~100+ videos. Honest odds when set: ~1 in 4 within 18 months. Levers: 2→3 videos/week, double down on breakout topics,
+sponsorships + affiliate links once videos average ~10K views, possibly a second channel on the same engine.
+
+| Checkpoint (monthly views, all videos) | Target date | Est. income/month | Actual (real numbers only) |
+|---|---|---|---|
+| 50K views/month | ~Mar 2027 | ~RM1k | |
+| 150K views/month | ~Jul 2027 | ~RM3–6k | |
+| 300K views/month | ~Dec 2027 | ~RM6–10k | |
+| 450K views/month | ~mid-2028 | **~RM10k** | |
+
 ## Milestones
 - [x] 15 Oct 2026 — first video posted (TikTok, Big Mac prices)
 - [x] 16 Oct 2026 — first 1,000 views (Big Mac TikTok, ~15 h after posting: 1,037 views)
