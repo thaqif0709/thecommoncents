@@ -1,6 +1,6 @@
 # The Common Cents — production guide
 
-Money & history explainers for a **global English-speaking audience**, in a 1930s rubber-hose cartoon style.
+Money & history explainers ("the money stories behind history") for a **global English-speaking audience**.
 **Goal: YouTube Partner Program** (1,000 subs + 4,000 long-form watch hours, or 10M Shorts views/90 days).
 On 18 Oct 2026 the owner dropped the Malaysia-only focus: "we do any topic to get us monetized". Pick topics by
 what is proven to break out (see *Topic research* below), not by country. **YouTube is the priority platform**
@@ -93,12 +93,17 @@ Never two YouTube posts in one day. (Adjust days around posts already scheduled.
 `TZ=Asia/Kuala_Lumpur date`) — never assume which day a date falls on. Never schedule a slot that has already passed.**
 **TikTok** (owner posts manually): suggest 6pm on the same day the Short goes up on YouTube. Re-check `getBestTimeToPostByNetwork` occasionally and adjust.
 
-## Visual style (owner-approved — keep it)
-The 1930s rubber-hose stage look (curtains, film grain, Luckiest Guy titles, palette, prop faces, ragtime) is the
-brand. Weekly runs must **not** redesign it. Allowed without asking: small, data-driven tweaks (faster first-second
-hook frame, pacing, caption wording, new props/backdrops that match the style). Anything bigger — new fonts,
-palette, characters, overall look — propose it in the run summary and wait for the owner.
-Judge style only on patterns across 10+ videos, not single posts.
+## Visual style (rebrand 18 Oct 2026 — owner said "copy working video styles from the top performers")
+Long-form look, copied from breakout money-history channels: **painted documentary illustrations** (AI images from
+Cloudflare Workers AI via `tools/make_images.py`, model flux-2-klein-4b; klein-9b for the thumbnail) with slow pans/zooms,
+light film grain and vignette, plus engine overlays drawn in code — year tags, source tags, big numbers, charts,
+timelines, lower-thirds, chapter cards, word-by-word captions (`doodle.py`: `painted`, `headline`, `lower_label`,
+`source_tag`, `year_tag`, `bar_chart`, `timeline`…). Documentary underscore + soft foley (`audio.py`, `music="doc"`).
+Logo/banner: `brand.py`. Format rules: `LONGFORM.md`. The old 1930s stage engine (`engine.py`, `props.py`) is only for the
+archived Shorts. Weekly runs may make small, data-driven tweaks; bigger look changes need the owner.
+Image prompts must name the real place/people of the story (e.g. "in Harare, Zimbabwe, Zimbabwean people") and ask for
+blank signs; check every image before rendering. Free tier = 10,000 neurons/day (≈48 klein-4b images) — never run test
+batches on the expensive models (flux-2-dev ≈ 15k neurons per image).
 
 ## Writing the script (story format — this is what works)
 - Hook in the first line: personal, surprising, uses "you" ("You spent 3.5 days in traffic last year").
