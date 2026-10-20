@@ -772,3 +772,90 @@ def thumbnail(path, headline, tag="", scene=None, bg=BG, banner=RED):
     img.save(path)
     img.resize((320, 180), Image.LANCZOS).save(path.replace(".png", "_phone.png"))
     return img
+
+# ---------- documentary episode helpers (painted long-form) ----------
+# An episode defines PLAN = {key: (image_key, move, overlay)} and CHAPTERS = {key: (n, title, image_key)}, then calls
+# documentary(PLAN, CHAPTERS, subs, sfx). Overlay builders below return f(d, t, sc); `at` can be seconds or a spoken word.
+def _at(sc, at): return wt(sc, at) if isinstance(at, str) else at
+
+def overlay_dim(d, k):
+    if k <= 0: return
+    img = d._image
+    img.paste(Image.blend(img, Image.new("RGB", img.size, (10, 8, 6)), k))
+
+def both(*fs): return lambda d, t, sc: [f(d, t, sc) for f in fs]
+def yr(y): return lambda d, t, sc: year_tag(d, y, prog(t, 0.2, 0.3))
+def src(s): return lambda d, t, sc: source_tag(d, s, prog(t, 0.5, 0.4))
+def head(s, at=0.3, y=150): return lambda d, t, sc: headline(d, s, prog(t, _at(sc, at), 0.35), y=y)
+def label(title, sub="", at=0.4): return lambda d, t, sc: lower_label(d, title, sub, prog(t, _at(sc, at), 0.5))
+
+def bignum(value, lab, at=0.4, col=YELLOW, y=470, size=170):
+    def f(d, t, sc):
+        a = prog(t, _at(sc, at), 0.4)
+        if a <= 0: return
+        overlay_dim(d, 0.45 * a)
+        big_number(d, W / 2, y, value, lab, a, col=col, size=size, sub_col=WHITE)
+    return f
+
+def card_box(lines, at=0.4, x=W / 2, y=430, w=900, size=54):
+    """White card with lines [(text, colour)] that slides in at `at`."""
+    def f(d, t, sc):
+        a = prog(t, _at(sc, at), 0.4)
+        if a <= 0: return
+        h = 90 + 78 * len(lines); off = (1 - ease_out(a)) * 40
+        rrect(d, (x - w / 2, y - h / 2 + off, x + w / 2, y + h / 2 + off), 24, WHITE)
+        for i, (s, c) in enumerate(lines):
+            text(d, (x, y - h / 2 + off + 80 + i * 78), s, size, fill=c, max_w=w - 60)
+    return f
+
+def checklist(left_title, left, right_title, right, at=0.6, dim=0.6):
+    """Two-column LOST / KEPT style table: left items get crosses, right items get ticks."""
+    def f(d, t, sc):
+        overlay_dim(d, dim)
+        rrect(d, (220, 170, 940, 820), 24, WHITE); rrect(d, (980, 170, 1700, 820), 24, WHITE)
+        text(d, (580, 240), left_title, 60, fill=RED); text(d, (1340, 240), right_title, 60, fill=DKGREEN)
+        for i in range(max(len(left), len(right))):
+            a = prog(t, _at(sc, at) + i * 0.5, 0.35)
+            for x, items, ok in ((580, left, False), (1340, right, True)):
+                if a <= 0 or i >= len(items): continue
+                y = 360 + i * 110
+                check_cross(d, x - 260, y, ok, a, r=30)
+                text(d, (x - 210, y), items[i], 42, anchor="lm", w="xbold", max_w=560)
+    return f
+
+def end_screen(at="subscribe"):
+    def f(d, t, sc):
+        tf = _at(sc, at)
+        a = prog(t, tf - 0.5, 0.5)
+        if a <= 0: return
+        overlay_dim(d, 0.5 * a)
+        text(d, (W * 0.3, 380), "THE COMMON CENTS", 96, fill=WHITE, stroke=6, stroke_fill=INK)
+        marker(d, (W * 0.3, 500), "the money stories behind history", 46, a=a, w="xbold")
+        pill(d, W * 0.3, 640, "SUBSCRIBE", RED, a=prog(t, tf, 0.4), size=52)
+    return f
+
+def documentary(PLAN, CHAPTERS, subs=(), sfx=(), img_dir="images"):
+    IMG = lambda k: k if "/" in k else f"{img_dir}/{k}.jpg"
+    def chap(n, title, img):
+        def f(d, t, sc):
+            painted(d._image, IMG(img), t, sc["dur"], "in", dim=0.65)
+            a = ease_out(prog(t, 0.05, 0.5))
+            text(d, (W / 2, 430 - (1 - a) * 30), f"CHAPTER {n}", 46, fill=YELLOW, w="xbold")
+            d.rectangle((W / 2 - 120 * a, 468, W / 2 + 120 * a, 476), fill=YELLOW)
+            for j, ln in enumerate(title.split("\n")):
+                text(d, (W / 2, 560 + j * 120 + (1 - a) * 40), ln, 110, fill=WHITE)
+        return f
+    def make(key):
+        if key in CHAPTERS: return chap(*CHAPTERS[key])
+        img, move, ov = PLAN[key]
+        def f(d, t, sc):
+            painted(d._image, IMG(img), t, sc["dur"], move)
+            if ov: ov(d, t, sc)
+        return f
+    keys = list(PLAN) + [k for k in CHAPTERS if k not in PLAN]
+    DRAW_ = {k: make(k) for k in keys}
+    PAINTED.update(keys)
+    for k in CHAPTERS:
+        if k in BY_KEY: BY_KEY[k]["nocap"] = True
+    sfx = list(sfx) + [(k, 0.05, "whoosh", 0.6) for k in CHAPTERS]
+    run(DRAW_, subs=subs, sfx=sfx)

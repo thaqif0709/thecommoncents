@@ -13,7 +13,7 @@ ap.add_argument("--max", type=int, default=45, help="max images this run (stay u
 ap.add_argument("--model", default="klein-4b", choices=MODELS)
 ap.add_argument("--only", default="")
 ap.add_argument("--redo", action="store_true")
-ap.add_argument("--budget", type=int, default=9500, help="stop before this many neurons are used this run")
+ap.add_argument("--budget", type=int, default=8000, help="stop before this many neurons are used this run")
 args = ap.parse_args()
 
 acct, tok = os.environ.get("CLOUDFLARE_ACCOUNT_ID"), os.environ.get("CLOUDFLARE_API_TOKEN")

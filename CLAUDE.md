@@ -108,7 +108,7 @@ timelines, lower-thirds, chapter cards, word-by-word captions (`doodle.py`: `pai
 Logo/banner: `brand.py`. Format rules: `LONGFORM.md`. The old 1930s stage engine (`engine.py`, `props.py`) is only for the
 archived Shorts. Weekly runs may make small, data-driven tweaks; bigger look changes need the owner.
 Image prompts must name the real place/people of the story (e.g. "in Harare, Zimbabwe, Zimbabwean people") and ask for
-blank signs; check every image before rendering. Free tier = 10,000 neurons/day (≈48 klein-4b images) — never run test
+blank signs; check every image before rendering. Free tier = 10,000 neurons/day, but Cloudflare meters a bit higher than the per-image headers — keep each day under ~8,000 (≈38 klein-4b images) — never run test
 batches on the expensive models (flux-2-dev ≈ 15k neurons per image).
 
 ## Writing the script (story format — this is what works)
