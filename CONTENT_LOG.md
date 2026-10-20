@@ -18,10 +18,15 @@
 | 05 | RM100 in 2015 | RM100 in 2015 = RM122 Today? Malaysia's Inflation in 20 Seconds | Wed 21 Oct 2026 4pm | **cancelled 18 Oct** (draft) |
 | 06 | Minimum wage | RM2,000 Minimum Wage: Who Actually Pays For It? | Fri 23 Oct 2026 4pm | **cancelled 18 Oct** (draft) |
 
+### Long-form (16:9, painted documentary style)
+| # | Topic | YouTube title | Length | Publishes (MYT) | Status |
+|---|---|---|---|---|---|
+| 07 | Zimbabwe hyperinflation | Zimbabwe Printed a 100 Trillion Dollar Note. What Actually Survived? | 15:02 | Thu 22 Oct 2026 10pm | scheduled (Metricool id 400724330; video + thumbnail on R2) |
+
 ## Metricool posts per month (plan limit 20, our cap 18)
 | Month | Posted/scheduled via Metricool |
 |---|---|
-| Oct 2026 | 1 — YouTube ep03 (17 Oct). The other 6 were cancelled on 18 Oct (now drafts, which don't count). |
+| Oct 2026 | 2 — YouTube ep03 (17 Oct), long-form ep07 (22 Oct). The 6 cancelled Shorts are drafts (don't count). |
 
 ## Analytics
 ### 16 Oct 2026 (first look)
