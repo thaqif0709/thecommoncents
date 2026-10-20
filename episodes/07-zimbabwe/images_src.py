@@ -62,6 +62,8 @@ P = {
  "handover":      "close-up of a hand passing a banknote to another hand across a shop counter, shallow depth of field, warm light",
  "collector":     "a banknote collector examining a banknote with a magnifying glass, an album of foreign notes open on the desk, cosy study",
  "choices":       "a wooden table with a stack of cash, a gold coin, a set of house keys and a few foreign currency notes arranged neatly, top-down view",
+ "thumb_note":    f"close-up of a shocked Zimbabwean man holding up a single banknote with a huge number of zeros, eyes wide, mouth open, dramatic side light, plain dark background on the right, {ZW}",
+ "thumb_barrow":  f"a Zimbabwean man pushing a wheelbarrow overflowing with bricks of paper banknotes past an empty shop, worried expression, dramatic warm light, {ZW}, 2008",
  "thumb_hero":    f"a shocked Zimbabwean man holding an enormous stack of paper banknotes in both arms, empty supermarket shelves behind him, dramatic light, {ZW}",
 }
 json.dump({k: v + ", " + STYLE for k, v in P.items()}, open("images.json", "w"), indent=1)
