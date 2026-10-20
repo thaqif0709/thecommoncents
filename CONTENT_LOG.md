@@ -69,6 +69,22 @@
   Its Money", "What Happened to…", "The ENTIRE History of [company] in N Minutes".
 - Malaysia search found almost no history/economics competition, but the audience (and ad rates) is far smaller.
 
+### 20 Oct 2026 — topic scan for long-form #2
+| Video | Channel subs | Views | VPH |
+|---|---|---|---|
+| America Had No National Currency Until 1863 — So What Were People Paying With? | 3.8K | 280K | 1,422 |
+| America's Lottery Millionaires: What Happens When You Win Big? | 22.6K | 1.2M | 1,204 |
+| This $520 Billion Family Owns America | 7.2K | 1.02M | 854 |
+| What Happened to the Nizam of Hyderabad, the Richest Man on Earth? | 7.1K | 703K | 716 |
+| 10 Lottery Winners Who Took the LUMP SUM Anyway… (Dumb Money Club) | 9.9K | 111K | 689 |
+| The ENTIRE History of Amazon in 20 Minutes | 5.3K | 153K | 676 |
+| The Forgotten Story Of The BIGGEST Lottery Winner EVER! (Dumb Money Club) | 9.9K | 1.48M | 161 |
+| The Economy Behind Netflix (AI-labelled) | 2.4K | 309K | 217 |
+| How the Richest Company in America Went Completely Broke: Sears | 1.6K | 381K | 164 |
+- Lottery money is breaking out across three channels (1.2M, 1.48M views) — a fresh money angle with US appeal.
+- "How [company] went broke" and "the economy behind [company]" keep working on tiny channels.
+- The 1863 currency video is still the strongest single outlier in money history.
+
 ## Global backlog (from outliers — our own research and script)
 - Long-form: Zimbabwe printed a 100-trillion-dollar note — what actually survived? (hyperinflation)
 - Long-form: Before banks: how people stored money for 4,000 years
