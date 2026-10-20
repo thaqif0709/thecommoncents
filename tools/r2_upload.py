@@ -73,7 +73,8 @@ if after > STOP_GB * GB and not a.force:
 if after > WARN_GB * GB:
     print(f"WARNING: bucket will be at {after / GB:.2f} GB — over {WARN_GB} GB. Tell the owner and prune old videos soon.")
 key = a.key or f"videos/{os.path.basename(a.file)}"
-ctype = "video/mp4" if a.file.endswith(".mp4") else "application/octet-stream"
+import mimetypes
+ctype = mimetypes.guess_type(a.file)[0] or "application/octet-stream"
 s3.upload_file(a.file, bucket, key, ExtraArgs={"ContentType": ctype})
 base = env("R2_PUBLIC_URL") or PUBLIC_URL
 print("uploaded:", key)
