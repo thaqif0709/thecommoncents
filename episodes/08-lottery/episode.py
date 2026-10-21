@@ -82,7 +82,7 @@ PLAN = {
  "c7": ("sweden_town", "right", None),
  "d1": ("sweden_town", "in", both(label("~250,000 PLAYERS", "followed for up to 20 years", "two"), src("Cesarini et al. (AER 2017); J-PAL"))),
  "d2": ("beach", "in", head("DID THEY QUIT WORK? MOSTLY NO", "Mostly")),
- "d3": ("sweden_office", "in", both(bignum("≈1% of the prize", "lower earnings per year", "one"), src("J-PAL; Cesarini et al. (AER 2017)"))),
+ "d3": ("sweden_office", "in", both(bignum("≈1% of the prize", "lower earnings per year", "one", size=120), src("J-PAL; Cesarini et al. (AER 2017)"))),
  "d3b": ("sweden_town", "left", card_box([("Higher taxes · stronger safety net", INK), ("smaller prizes than US jackpots", INK)], 1.0, y=280, w=1100)),
  "d3c": ("store_counter", "in", None),
  "d3d": ("sweden_couple", "in", None),

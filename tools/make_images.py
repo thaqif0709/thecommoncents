@@ -34,6 +34,7 @@ for k in todo[:args.max]:
                               files={"prompt": (None, prompts[k]), "width": (None, "1920"), "height": (None, "1088")})
             if r.status_code == 200: break
             print(f"  {k}: HTTP {r.status_code} {r.text[:200]}")
+            if "flagged" in r.text.lower(): break                      # safety filter: skip this key, reword its prompt
             if r.status_code in (400, 401, 403, 429) or "allocation" in r.text.lower() or "limit" in r.text.lower():
                 sys.exit("stopping: auth error or daily free allowance used up (try again later)")
         except requests.RequestException as e:
@@ -41,6 +42,7 @@ for k in todo[:args.max]:
         time.sleep(3 * (attempt + 1))
     else:
         print(f"  {k}: giving up"); continue
+    if r.status_code != 200: print(f"  {k}: skipped (flagged) — reword the prompt"); continue
     img = Image.open(io.BytesIO(base64.b64decode(r.json()["result"]["image"]))).convert("RGB")
     if img.size != (1920, 1080):                                       # klein rounds height to 1072/1088
         s = max(1920 / img.width, 1080 / img.height)
