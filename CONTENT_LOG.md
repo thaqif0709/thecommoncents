@@ -22,6 +22,8 @@
 | # | Topic | YouTube title | Length | Publishes (MYT) | Status |
 |---|---|---|---|---|---|
 | 07 | Zimbabwe hyperinflation | Zimbabwe Printed a 100 Trillion Dollar Note. What Actually Survived? | 15:02 | Thu 22 Oct 2026 10pm | scheduled (Metricool id 400724330; video + thumbnail on R2) |
+| 08 | Lottery winners myth | Do Lottery Winners Really Go Broke? | 12:29 | Mon 26 Oct 2026 10pm (planned) | rendered + on R2, awaiting owner review |
+| 09 | Sears vs Amazon | Sears Was Amazon Before Amazon. So Why Did It Die? | ~15:00 | Thu 29 Oct 2026 10pm (planned) | script + voice done; images Fri/Sat |
 
 ## Metricool posts per month (plan limit 20, our cap 18)
 | Month | Posted/scheduled via Metricool |
