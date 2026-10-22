@@ -14,3 +14,6 @@ episodes/**/preview/
 
 # long-form upload files are too big for GitHub; they live on Cloudflare R2 (tools/r2_upload.py)
 videos/*.mp4
+episodes/**/enc.log
+episodes/**/enc*.log*
+episodes/**/ffmpeg2pass*
