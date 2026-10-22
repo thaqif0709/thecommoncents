@@ -33,7 +33,7 @@ P = {
  "calm_porch":    "an older man reading a book on a wooden porch in the Swedish countryside, peaceful, summer evening",
  "dutch_street":  "a Dutch street of brick row houses with bicycles, a shiny new unbranded car with a big ribbon parked outside, neighbours gathering",
  "neighbors_car": "neighbours peeking over a garden fence at a shiny new plain debadged car seen from the side in the next driveway, no emblems, no grille badge, brick terraced houses, Netherlands, afternoon",
- "car_sale":      "a man handing car keys to a buyer beside a plain debadged silver car seen from the side, no emblems, no grille badge, both smiling, quiet street",
+ "car_sale":      "a smiling woman receiving a set of keys from a man on a sunny residential street in the Netherlands, a plain silver car parked behind them softly out of focus, seen from the side",
  "canada_street": "a Canadian suburban street in autumn with maple trees, red leaves, tidy houses, cars in driveways",
  "bills_couple":  "a stressed couple at a kitchen table with bills and a laptop, a new car visible through the window, evening",
  "keeping_up":    "a suburban street where every house has a new car and renovation work going on, people watching each other, sunny",
