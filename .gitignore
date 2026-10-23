@@ -17,3 +17,4 @@ videos/*.mp4
 episodes/**/enc.log
 episodes/**/enc*.log*
 episodes/**/ffmpeg2pass*
+episodes/**/imgrun.log
