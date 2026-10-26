@@ -31,6 +31,15 @@
 | Oct 2026 | 4 — YouTube ep03 (17 Oct), long-form ep07 (22 Oct), ep08 (26 Oct), ep09 (29 Oct). The 6 cancelled Shorts are drafts (don't count). |
 
 ## Analytics
+
+### 26 Oct 2026 snapshot (vidIQ)
+| Metric | Value |
+|---|---|
+| Subscribers | 0 |
+| Channel views (all time) | 4 |
+| Zimbabwe (ep07, live 22 Oct) | 4 views, 0 likes, 1 comment; flat at 4 since 23 Oct |
+- Video is public and embeddable (oEmbed OK), so it isn't blocked; YouTube is giving it almost no impressions.
+- Not on pace for the 1 Nov checkpoint (100 subs / 300 h). Need impressions/CTR/traffic-source data from Studio to diagnose.
 ### 16 Oct 2026 (first look)
 | Post | Age | Views | Likes | Comments | Shares |
 |---|---|---|---|---|---|
