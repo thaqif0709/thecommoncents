@@ -9,6 +9,9 @@ one belongs to someone else). TikTok (@thecommoncents) is posted **manually by t
 The owner has authorised **autonomous weekly production and scheduling on YouTube** (no per-post approval).
 Read this whole file before doing anything.
 
+> **26 Oct 2026 — PROJECT HALTED by the owner.** Make, schedule and publish nothing until the owner restarts it.
+> Sears (ep09) is a Metricool **draft** (id 406808690) and will not publish. The live videos (Zimbabwe, Lottery) stay up.
+
 > **18 Oct 2026 — LONG-FORM ONLY.** The owner cancelled the Shorts and wants 16:9 long-form videos only
 > (~14–18 min). Read `LONGFORM.md` for the format we copy from breakout videos. The weekly scheduled task is
 > **paused** until the long-form pipeline is proven; the Shorts sections below are kept for reference only. Make
